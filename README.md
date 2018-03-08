@@ -12,9 +12,15 @@ fastlane add_plugin resize_screenshots
 
 ## About resize_screenshots
 
-Resize screenshots taken from your simulator to use for Frameit.
+I love using [fastlane frameit]() to create screenshots for my iOS apps for the App Store. It's a handy tool to take screenshots I save from an iOS simulator and put them into an iPhone frame to publish to the App Store. It's a great tool that you should really check out.
 
-**Note to author:** Add a more detailed description about this plugin here. If your plugin contains multiple actions, make sure to mention them here.
+However, frameit requires your screenshots to be in this very specific image size in order to put them into a frame. If your screenshot is not in that *exact* image size, it will throw an error.
+
+When I take a screenshot in my iOS simulator, it seems to save those screenshots in `836x1811` size for iPhone X, but frameit requires `1125x2436` for iPhone X. This is super weird because the height/width ratio for `836x1811` and `1125x2436` is off by *1 pixel*. If I try to resize `836x1811` to `1125x____` with the same aspect ratio, I get `1125x2437`. Weird, right?!
+
+Anyway, I digress.
+
+I decided to make this plugin so I can take screenshots from my simulator, put those into a folder, resize the images automatically by device and then run those resized images into frameit for me. 🎊 No more frameit image size issues! 🎊
 
 ## Example
 
@@ -35,18 +41,20 @@ To automatically fix many of the styling issues, use
 rubocop -a
 ```
 
+## Author
+
+* Levi Bostian - [GitHub](https://github.com/levibostian), [Twitter](https://twitter.com/levibostian), [Website/blog](http://levibostian.com)
+
+![Levi Bostian image](https://gravatar.com/avatar/22355580305146b21508c74ff6b44bc5?s=250)
+
 ## Issues and Feedback
 
-For any other issues and feedback about this plugin, please submit it to this repository.
+For any other issues and feedback about this plugin, please [create an issue]().
 
-## Troubleshooting
+If you have trouble using plugins, check out the [Plugins Troubleshooting](https://docs.fastlane.tools/plugins/plugins-troubleshooting/) guide. After giving that a try and you still need help, please, [create an issue]() and I'll try to help you out.
 
-If you have trouble using plugins, check out the [Plugins Troubleshooting](https://docs.fastlane.tools/plugins/plugins-troubleshooting/) guide.
-
-## Using _fastlane_ Plugins
-
-For more information about how the `fastlane` plugin system works, check out the [Plugins documentation](https://docs.fastlane.tools/plugins/create-plugin/).
-
-## About _fastlane_
+## What is _fastlane_?
 
 _fastlane_ is the easiest way to automate beta deployments and releases for your iOS and Android apps. To learn more, check out [fastlane.tools](https://fastlane.tools).
+
+For more information about how the `fastlane` plugin system works, check out the [Plugins documentation](https://docs.fastlane.tools/plugins/create-plugin/).

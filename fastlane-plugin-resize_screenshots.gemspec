@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email         = 'levi.bostian@gmail.com'
 
   spec.summary       = 'Resize screenshots taken from your simulator to use for Frameit.'
-  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-resize_screenshots"
+  spec.homepage      = "https://github.com/levibostian/fastlane-plugin-resize_screenshots"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)

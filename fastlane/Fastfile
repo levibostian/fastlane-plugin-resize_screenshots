@@ -1,3 +1,4 @@
 lane :test do
+  # Currently, there are no extra options. You can only resize images in the current directory, so this is all you need to get it working. 
   resize_screenshots
 end
